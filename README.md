@@ -1,0 +1,2 @@
+# Baidu-bilibili-tieba-analyse
+对百度bilibil吧截至2018年10月10日近2000个主题帖进行分析
