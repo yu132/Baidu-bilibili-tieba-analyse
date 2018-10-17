@@ -11,7 +11,7 @@
 由于尽量不给对应服务器造成压力，所以对于百度的爬取都是单线程+休眠1秒/主页或主题帖，爬取楼中楼的时候是单线程+休眠250ms/页，对于萌娘百科的爬取是单线程+休眠5秒/页，所以进度会比较慢
 
 ## 如何抓取百度贴吧内容
-请见teiba.md
+请见[teiba.md](https://github.com/yu132/Baidu-bilibili-tieba-analyse/blob/master/tieba.md)  
 
 ## 进度记录
 
