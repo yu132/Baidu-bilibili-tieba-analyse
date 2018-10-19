@@ -10,10 +10,7 @@
 # 爬取方式
 ## 1. 主页
 #### 爬取链接：https://tieba.baidu.com/f?kw={kw}&pn={pn} (只能爬前两千)
-
-或
-
-#### 爬取链接：https://tieba.baidu.com/{kw}?"pn={pn} （可以全部爬取）
+#### 或：https://tieba.baidu.com/{kw}?"pn={pn} （可以全部爬取）
 
 #### 参数：
 + kw: 爬取贴吧的名字
