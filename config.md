@@ -33,3 +33,7 @@ pip3 install pymysql<br>
 pip3 install configparser<br>
 pip3 install DBUtils<br>
 ```
+### scrapy:
+```
+sudo apt install python-scrapy
+```
