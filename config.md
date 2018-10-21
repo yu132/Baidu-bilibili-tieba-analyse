@@ -24,14 +24,15 @@ sudo ln -s /usr/bin/python3.5 /usr/bin/python<br>
 ```
 ### pip3:
 ```
-sudo apt-get install python3-pip<br>
+sudo apt-get install python3-pip
+pip3 install --upgrade pip
 ```
 ### import:
 ```
-pip3 install scrapy<br>
-pip3 install pymysql<br>
-pip3 install configparser<br>
-pip3 install DBUtils<br>
+pip3 install scrapy
+pip3 install pymysql
+pip3 install configparser
+pip3 install DBUtils
 ```
 ### scrapy:
 ```
