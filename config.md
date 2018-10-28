@@ -38,3 +38,8 @@ pip3 install DBUtils
 ```
 sudo apt install python-scrapy
 ```
+
+### 运行
+```
+scrapy crawl baidu_spider
+```
