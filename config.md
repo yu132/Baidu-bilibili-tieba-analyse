@@ -12,15 +12,37 @@ update user set host='%' where user='root';
 sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
 将bind-address = 127.0.0.1注释掉（即在行首加#）
 
-service mysql restart<br>
+service mysql restart
 ```
+
+### 修改mysql编码至utf8mb4
+```
+sudo gedit /etc/mysql/my.cnf
+
+加上下面这段
+[client] 
+default-character-set = utf8mb4
+
+[mysql] 
+default-character-set = utf8mb4
+
+[mysqld] 
+character-set-client-handshake = FALSE 
+character-set-server = utf8mb4 
+collation-server = utf8mb4_unicode_ci 
+init_connect=’SET NAMES utf8mb4’
+
+service mysql restart
+```
+
+
 ## 安装python3
 ### python3:
 ```
-sudo apt-get install python3-pip<br>
-sudo cp /usr/bin/python /usr/bin/python_bak<br>
-sudo rm /usr/bin/python<br>
-sudo ln -s /usr/bin/python3.5 /usr/bin/python<br>
+sudo apt-get install python3-pip
+sudo cp /usr/bin/python /usr/bin/python_bak
+sudo rm /usr/bin/python
+sudo ln -s /usr/bin/python3.5 /usr/bin/python
 ```
 ### pip3:
 ```
