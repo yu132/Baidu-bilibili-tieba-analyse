@@ -27,6 +27,13 @@
 + 2018/10/15 爬取萌娘百科所有词条信息+筛取对应词
 + 2018/10/15-now 爬取百度百科相关词条（爬不动了，可能被ban了）
 
+## 工具：
+使用的爬虫（scrapy实现的）：
+https://github.com/yu132/Baidu-bilibili-tieba-analyse/blob/master/scrapy)
+
+查询用sql：
+[sqls.txt](https://github.com/yu132/Baidu-bilibili-tieba-analyse/blob/master/sql.txt)  
+
 ## 结果展示
-词云：
+词云（只使用全部题目来做的）：
 ![b吧娘](https://github.com/yu132/Baidu-bilibili-tieba-analyse/blob/master/pic2.jpg) 
