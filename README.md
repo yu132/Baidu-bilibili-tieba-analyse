@@ -29,10 +29,10 @@
 
 ## 工具：
 使用的爬虫（scrapy实现的）：
-https://github.com/yu132/Baidu-bilibili-tieba-analyse/blob/master/scrapy)
+https://github.com/yu132/Baidu-bilibili-tieba-analyse/blob/master/scrapy
 
 查询用sql：
-[sqls.txt](https://github.com/yu132/Baidu-bilibili-tieba-analyse/blob/master/sql.txt)  
+[sqls.txt](https://github.com/yu132/Baidu-bilibili-tieba-analyse/blob/master/sqls.txt)  
 
 ## 结果展示
 词云（只使用全部题目来做的）：
