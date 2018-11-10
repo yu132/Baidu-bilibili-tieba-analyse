@@ -1,3 +1,6 @@
+# 内容
+本目录下的baiduTieba/为一个scrapy实现的抓取百度贴吧爬虫
+
 # 使用须知
 1.首先，您需要知道有关mysql的大量知识和scrapy的相关知识，否则很可能会遇到错误<br>
 2.其次，本爬虫只在ubuntu16.04系统测试可用，其余系统均未测试，可能会出现不可预料的错误<br>
@@ -20,7 +23,7 @@ db的默认值为tieba_spider，host默认值为localhost，前面两者可以�
 ### 2.配置爬虫代码
 本爬虫有两个部分，第一个部分是爬取贴吧主页的，即有很多个主题帖题目，点进去可以查看帖子详细内容的爬虫，第二个部分是爬取详细内容的爬虫
 
-第一个部分是默认爬取全部的，如果只需要爬取指定数量页面请在baidu_spider.py中的class BaiduTiebaMainPageSpider中修改def parse_first(self,response)中的循环yield返回的数量，提前返回
+第一个部分是默认爬取全部的，如果只需要爬取指定数量页面请在baidu_spider.py中的class BaiduTiebaMainPageSpider中修改def parse_first(self,response)中的循环yield返回的数量，提前返回。另外，如果您希望爬取**别的贴吧**的帖子请将同样是这个类下的def start_requests(self):中urls中的参数进行修改。
 
 第二个部分是爬取第一个部分爬回来的帖子编号进行爬取详细内容的。由于数据规模巨大，在baidu_spider_tiezi.py中有STEP_EACH_TIEZI_SCAN参数，您可以配置每一次需要爬取的量，如果磁盘不够，肯定会出错，请注意，本爬虫并没有处理相关的情况的代码。
 
