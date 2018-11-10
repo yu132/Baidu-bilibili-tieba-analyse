@@ -1,0 +1,66 @@
+﻿已经爬取的帖子数量：
+SELECT COUNT(*) FROM tiezi_info WHERE ts_id IS NOT NULL 
+
+帖子数量
+SELECT COUNT(*) FROM tiezi_content_info
+WHERE `floor` IS NOT NULL 
+
+楼中楼数量：
+SELECT COUNT(*) FROM louzhonglou_info
+
+表情数量：
+SELECT COUNT(*) FROM emoji_info
+
+图片数量：
+SELECT COUNT(*) FROM image_info
+
+查看爬取进度（每个ts对应的爬取数量）：
+SELECT ts_id,COUNT(*) FROM tiezi_info GROUP BY ts_id
+
+获取客户端帖子统计数量和占比:
+SELECT IFNULL(client_type,'PC浏览器') AS client_type,COUNT(*) AS total_amount, 
+CONCAT(TRUNCATE (COUNT(*)/(SELECT COUNT(*) FROM tiezi_content_info) * 100, 2),'%') AS percent
+FROM tiezi_content_info
+WHERE `floor` IS NOT NULL 
+GROUP BY client_type
+
+查询发帖的作者等级分布：
+SELECT author_level,COUNT(*) AS total_amount,
+CONCAT(TRUNCATE (COUNT(*)/(SELECT COUNT(*) FROM tiezi_content_info) * 100, 2),'%') AS percent
+FROM tiezi_content_info 
+WHERE author_level IS NOT NULL 
+GROUP BY author_level
+
+时间分组，每分钟：
+SELECT RIGHT(`TIME`,5),COUNT(*) 
+FROM tiezi_content_info 
+WHERE RIGHT(`TIME`,5) IS NOT NULL
+GROUP BY  RIGHT(`TIME`,5)
+
+时间分组，每小时：
+SELECT SUBSTRING(`time`,12,2) AS `hour`,COUNT(*) AS total_amount,
+CONCAT(TRUNCATE (COUNT(*)/(SELECT COUNT(*) FROM tiezi_content_info) * 100, 2),'%') AS percent
+FROM tiezi_content_info
+WHERE SUBSTRING(`time`,12,2) IS NOT NULL
+GROUP BY SUBSTRING(`time`,12,2)
+
+发帖（所有楼层）最多（前1000）的账号：
+SELECT author_name, COUNT(*) AS total_amount 
+FROM tiezi_content_info 
+WHERE author_name IS NOT NULL 
+AND `floor` IS NOT NULL
+GROUP BY author_name
+ORDER BY total_amount DESC
+LIMIT 1,1000
+
+发主题帖（1楼）最多（前1000）的账号：
+SELECT author_name, COUNT(*) AS total_amount 
+FROM tiezi_content_info 
+WHERE author_name IS NOT NULL 
+AND `floor`=1
+GROUP BY author_name
+ORDER BY total_amount DESC
+LIMIT 1,1000
+
+平均帖子文本长度
+SELECT AVG(LENGTH(content)) FROM tiezi_content_info
