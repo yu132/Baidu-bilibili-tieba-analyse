@@ -30,16 +30,19 @@ db的默认值为tieba_spider，host默认值为localhost，前面两者可以�
 # 数据库设计
 ### 第一部分的表：
 
-main_page_info -> 主页扫描信息 重要性：低
-tiezi_info -> 提供一些最重要的主页信息给第二次爬取时使用 重要性：中
-base_tiezi_info_ddl -> 主页中提取到的全部信息 重要性：高
+main_page_info -> 主页扫描信息 重要性：低<br>
+tiezi_info -> 提供一些最重要的主页信息给第二次爬取时使用 重要性：中<br>
+base_tiezi_info_ddl -> 主页中提取到的全部信息 重要性：高<br>
 
 ### 第二部分的表：
 
-tiezi_scan -> 帖子详细内容的扫描信息 重要性：低
-tiezi_content_info_ddl -> 帖子主要内容信息 重要性：最高
-louzhonglou_info_ddl -> 楼中楼回复信息 重要性：很高
-image_info_ddl -> 帖子主要回复中出现的图片链接 重要性：中
-emoji_info_ddl -> 帖子中和楼中楼中出现的表情 重要性：中
-emoji_louzhonglou_relationship -> 表情和楼中楼联系 重要性：中低
-emoji_tiezi_content_relationship -> 表情和帖子内容联系 重要性：中低
+tiezi_scan -> 帖子详细内容的扫描信息 重要性：低<br>
+tiezi_content_info -> 帖子主要内容信息 重要性：最高<br>
+louzhonglou_info -> 楼中楼回复信息 重要性：很高<br>
+image_info -> 帖子主要回复中出现的图片链接 重要性：中<br>
+emoji_info -> 帖子中和楼中楼中出现的表情 重要性：中<br>
+emoji_louzhonglou_relationship -> 表情和楼中楼联系 重要性：中低<br>
+emoji_tiezi_content_relationship -> 表情和帖子内容联系 重要性：中低<br>
+
+### 查询：
+请见主目录下的sqls.txt
