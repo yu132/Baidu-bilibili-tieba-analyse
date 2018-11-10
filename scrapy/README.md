@@ -45,4 +45,4 @@ emoji_louzhonglou_relationship -> 表情和楼中楼联系 重要性：中低<br
 emoji_tiezi_content_relationship -> 表情和帖子内容联系 重要性：中低<br>
 
 ### 查询：
-请见主目录下的sqls.txt
+请见主目录下的[sqls.txt](https://github.com/yu132/Baidu-bilibili-tieba-analyse/blob/master/sqls.txt)  
