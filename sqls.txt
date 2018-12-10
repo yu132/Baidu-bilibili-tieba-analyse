@@ -64,3 +64,46 @@ LIMIT 1,1000
 
 平均帖子文本长度
 SELECT AVG(LENGTH(content)) FROM tiezi_content_info
+
+总帖子文本长度
+SELECT SUM(LENGTH(content)) FROM tiezi_content_info
+
+最早帖子时间
+SELECT MIN(`time`) FROM tiezi_content_info
+
+将帖子文本合并（用于提取关键字）
+
+
+将帖子文本和楼中楼文本一起合并
+SELECT a.tid tid,CONCAT(a.content_comb,b.content_comb) content_comb,a.time `time`, a.floor `floor`
+FROM
+(SELECT tid,GROUP_CONCAT(content) content_comb,MIN(`time`) `time`,MAX(`floor`) `floor`
+FROM tiezi_content_info
+WHERE content_id<10000
+GROUP BY tid
+LIMIT 0,1000) a,
+(SELECT tid,GROUP_CONCAT(content) content_comb
+FROM louzhonglou_info
+WHERE louzhonglou_id<10000
+GROUP BY tid
+LIMIT 0,1000) b
+WHERE a.tid=b.tid
+
+表情数量
+SELECT *
+FROM 
+(SELECT a.emoji_id emoji_id,a.sum+b.sum `sum`
+FROM
+(SELECT emoji_id,COUNT(*) `sum` FROM emoji_louzhonglou_relationship GROUP BY emoji_id) a,
+(SELECT emoji_id,COUNT(*) `sum` FROM emoji_tiezi_content_relationship GROUP BY emoji_id) b
+WHERE a.emoji_id=b.emoji_id) c
+NATURAL JOIN
+emoji_info
+ORDER BY `sum` DESC
+
+发帖数量和年月
+SELECT SUBSTRING(`time`,1,7) AS `time`,COUNT(*) AS total_amount,
+CONCAT(TRUNCATE (COUNT(*)/(SELECT COUNT(*) FROM tiezi_content_info WHERE SUBSTRING(`time`,1,7) IS NOT NULL AND `floor`=1) * 100, 2),'%') AS percent
+FROM tiezi_content_info
+WHERE SUBSTRING(`time`,1,7) IS NOT NULL AND `floor`=1
+GROUP BY SUBSTRING(`time`,1,7)
