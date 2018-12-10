@@ -21,12 +21,19 @@
 + 2018/10/16-2018/10/19 爬取楼中楼主要信息
 + 2018/10/19-2018/10/21 爬取楼中楼其他信息
 + 2018/10/23-2018/11/?? 重写爬虫，爬取主页信息（目前爬取共87w个主题帖）
-+ 2018/11/??-now 重新页面爬虫，正在爬取87w主题帖的内容
++ 2018/11/??-now 重新写页面爬虫，正在爬取87w主题帖的内容（现在大概爬了几w吧，但是回复数量已经170w了，等爬到10w我就开始分析）
 
 ### acg词汇数据
 + 2018/10/15 爬取萌娘百科所有词条信息+筛取对应词
 + 2018/10/15-now 爬取百度百科相关词条（爬不动了，可能被ban了）
 
+## 工具：
+使用的爬虫（scrapy实现的）：
+https://github.com/yu132/Baidu-bilibili-tieba-analyse/blob/master/scrapy
+
+查询用sql：
+[sqls.txt](https://github.com/yu132/Baidu-bilibili-tieba-analyse/blob/master/sqls.txt)  
+
 ## 结果展示
-词云：
+词云（只使用全部题目来做的）：
 ![b吧娘](https://github.com/yu132/Baidu-bilibili-tieba-analyse/blob/master/pic2.jpg) 
