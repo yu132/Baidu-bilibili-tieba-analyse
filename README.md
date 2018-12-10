@@ -19,3 +19,25 @@ https://github.com/yu132/Baidu-bilibili-tieba-analyse/blob/master/scrapy
 
 查询用sql：
 [sqls.txt](https://github.com/yu132/Baidu-bilibili-tieba-analyse/blob/master/sqls.txt)  
+
+## 结果展示
+词云（只使用全部题目来做的）：
+![b吧娘](https://github.com/yu132/Baidu-bilibili-tieba-analyse/blob/master/result/pic2.jpg) 
+
+发帖用户等级分布：
+![](https://github.com/yu132/Baidu-bilibili-tieba-analyse/blob/master/result/bar.jpg) 
+
+帖子随月份的分布：
+![](https://github.com/yu132/Baidu-bilibili-tieba-analyse/blob/master/result/bar2.jpg) 
+
+客户端使用占比：
+![](https://github.com/yu132/Baidu-bilibili-tieba-analyse/blob/master/result/pie_1.jpg) 
+
+发主题贴最多的用户：
+请见[author1.md](https://github.com/yu132/Baidu-bilibili-tieba-analyse/blob/master/result/author1.md) 
+
+发回复贴最多的用户：
+请见[author.md](https://github.com/yu132/Baidu-bilibili-tieba-analyse/blob/master/result/author.md)
+
+帖子每小时的分布：
+请见[time_hour.md](https://github.com/yu132/Baidu-bilibili-tieba-analyse/blob/master/result/time_hour.md)
